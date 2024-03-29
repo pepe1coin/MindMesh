@@ -23,7 +23,7 @@ export const ChatMessages = ({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFakeLoading(false);
-    }, 1000);
+    }, 3000);
 
     return () => {
       clearTimeout(timeout);
