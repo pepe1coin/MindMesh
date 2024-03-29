@@ -14,10 +14,10 @@ export async function PATCH(
     const { src, name, description, instructions, seed, categoryId } = body;
 
     if (!params.companionId) {
-      return new NextResponse("Companion ID required", { status: 400 });
+      return new NextResponse("SPECAI ID required", { status: 400 });
     }
 
-    if (!user || !user.id || !user.firstName) {
+    if (!user || !user.id || !user.web3Wallets[0].web3Wallet) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
@@ -30,7 +30,8 @@ export async function PATCH(
     if (!isPro) {
       return new NextResponse("Pro subscription required", { status: 403 });
     }
-
+    const address = user.web3Wallets[0].web3Wallet;
+    const ShortedAddress = `${address.slice(0,5)}...${address.slice(-4)}`
     const companion = await prismadb.companion.update({
       where: {
         id: params.companionId,
@@ -39,7 +40,7 @@ export async function PATCH(
       data: {
         categoryId,
         userId: user.id,
-        userName: user.firstName,
+        userName: ShortedAddress,
         src,
         name,
         description,
@@ -50,7 +51,7 @@ export async function PATCH(
 
     return NextResponse.json(companion);
   } catch (error) {
-    console.log("[COMPANION_PATCH]", error);
+    console.log("[SPECAI_PATCH]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 };
@@ -75,7 +76,7 @@ export async function DELETE(
 
     return NextResponse.json(companion);
   } catch (error) {
-    console.log("[COMPANION_DELETE]", error);
+    console.log("[SPECAI_DELETE]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 };

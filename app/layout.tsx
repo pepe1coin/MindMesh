@@ -12,8 +12,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Companion.AI',
-  description: 'Your customized companion.',
+  title: 'Spec.AI',
+  description: 'Create Your Specialized AI',
+  icons: [{ rel: "icon", url: "https://i.ibb.co/MhtDGSp/4.png" },]
 }
 
 export default function RootLayout({

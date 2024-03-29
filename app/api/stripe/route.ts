@@ -11,7 +11,8 @@ export async function GET() {
   try {
     const { userId } = auth();
     const user = await currentUser();
-
+    console.log("User:", user)
+    console.log("userId:", userId)
     if (!userId || !user) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
@@ -37,14 +38,14 @@ export async function GET() {
       payment_method_types: ["card"],
       mode: "subscription",
       billing_address_collection: "auto",
-      customer_email: user.emailAddresses[0].emailAddress,
+      // customer_email: user.web3Wallets[0].web3Wallet,
       line_items: [
         {
           price_data: {
             currency: "USD",
             product_data: {
-              name: "Companion Pro",
-              description: "Create Custom AI Companions"
+              name: "SPECAI Pro",
+              description: "Create Custom AI Specialized"
             },
             unit_amount: 999,
             recurring: {

@@ -19,7 +19,7 @@ export async function POST(
     const { prompt } = await request.json();
     const user = await currentUser();
 
-    if (!user || !user.firstName || !user.id) {
+    if (!user || !user.web3Wallets[0].web3Wallet || !user.id) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 

@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     const user = await currentUser();
     const { src, name, description, instructions, seed, categoryId } = body;
 
-    if (!user || !user.id || !user.firstName) {
+    if (!user || !user.id || !user.web3Wallets[0].web3Wallet) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
@@ -23,12 +23,14 @@ export async function POST(req: Request) {
     if (!isPro) {
       return new NextResponse("Pro subscription required", { status: 403 });
     }
-
+    const address = user.web3Wallets[0].web3Wallet;
+    const ShortedAddress = `${address.slice(0,5)}...${address.slice(-4)}`
+    
     const companion = await prismadb.companion.create({
       data: {
         categoryId,
         userId: user.id,
-        userName: user.firstName,
+        userName: ShortedAddress,
         src,
         name,
         description,
