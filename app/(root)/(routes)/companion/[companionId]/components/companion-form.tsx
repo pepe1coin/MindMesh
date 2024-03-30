@@ -139,7 +139,7 @@ export const CompanionForm = ({
                     <Input disabled={isLoading} placeholder="Elon Musk" {...field} />
                   </FormControl>
                   <FormDescription>
-                    This is how your AI Companion will be named.
+                    This is how your Specialized AI will be named.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -155,7 +155,7 @@ export const CompanionForm = ({
                     <Input disabled={isLoading} placeholder="CEO & Founder of Tesla, SpaceX" {...field} />
                   </FormControl>
                   <FormDescription>
-                    Short description for your AI Companion
+                    Short description for your Specialized AI
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -222,7 +222,7 @@ export const CompanionForm = ({
                   <Textarea disabled={isLoading} rows={7} className="bg-background resize-none" placeholder={SEED_CHAT} {...field} />
                 </FormControl>
                 <FormDescription>
-                  Write couple of examples of a human chatting with your AI companion, write expected answers.
+                  Write couple of examples of a human chatting with your Specialized AI, write expected answers.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
