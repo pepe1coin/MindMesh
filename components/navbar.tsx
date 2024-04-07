@@ -26,9 +26,9 @@ export const Navbar = ({
       <div className="flex items-center">
         <MobileSidebar isPro={isPro} />
         <Link href="/" className="flex items-center ml-2">
-          <img src="/sai.png" alt="Logo" className="rounded-full h-14 w-14" /> 
-          <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary ml-2", font.className)}>
-            SPEC.AI
+          <img src="/sai.png" alt="Logo" className="rounded-full h-20 w-20" /> 
+          <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary ml-2 text-[#076aab] font-orbitron", font.className)}>
+          MindMesh
           </h1>
         </Link>
       </div>

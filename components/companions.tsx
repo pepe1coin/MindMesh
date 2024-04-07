@@ -23,11 +23,11 @@ export const Companions = ({
           <Image
             fill
             className="grayscale"
-            src="/empty.png"
+            src="/SAI.png"
             alt="Empty"
           />
         </div>
-        <p className="text-sm text-muted-foreground">No companions found.</p>
+        <p className="text-sm text-muted-foreground">No AI Cards found.</p>
       </div>
     )
   }

@@ -9,6 +9,9 @@ module.exports = {
 	],
   theme: {
     container: {
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'], // This key is how you'll refer to the font in your classes
+      },
       center: true,
       padding: "2rem",
       screens: {

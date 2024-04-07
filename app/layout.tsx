@@ -12,9 +12,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Spec.AI',
-  description: 'Create Your Specialized AI',
-  icons: [{ rel: "icon", url: "https://i.ibb.co/MhtDGSp/4.png" },]
+  title: 'MindMesh | Unleashing AI, Uniting Minds.',
+  // description: 'Create Your Specialized AI',
+  icons: [{ rel: "icon", url: "https://imagetolink.com/ib/KolMtEKnX3.png" },]
 }
 
 export default function RootLayout({
